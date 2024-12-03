@@ -59,6 +59,18 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-const humanChoice = getHumanChoice();
+/* const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
-playRound(humanChoice, computerChoice);
+playRound(humanChoice, computerChoice); */
+
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        playRound(humanChoice, computerChoice); 
+    }
+    
+    console.log("Final Score: Human: " + humanScore + "\nComputer Score: " + computerScore);
+}
+
+playGame();
