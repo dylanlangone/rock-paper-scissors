@@ -13,3 +13,16 @@ function getComputerChoice() {
 }
 
 console.log("random choice: " + getComputerChoice());
+
+function getHumanChoice() {
+    let choice = prompt("Choose rock, paper, or scissors: ").toLowerCase();
+    if (choice === "rock" || choice=== "paper" || choice === "scissors") {
+        return choice;
+    } else {
+        console.log("Please choose rock, paper, or scissors");
+        return null;
+    }
+}
+
+let humanChoice = getHumanChoice();
+console.log("human choice: " + humanChoice);
