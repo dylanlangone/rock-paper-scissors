@@ -1,5 +1,8 @@
 console.log("Hello, rps!");
 
+let humanScore = 0;
+let computerScore = 0;
+
 // randomly return rock, paper, or scissors
 function getComputerChoice() {
     let randomInt = Math.floor(Math.random() * 3);
@@ -12,8 +15,6 @@ function getComputerChoice() {
     }
 }
 
-console.log("random choice: " + getComputerChoice());
-
 function getHumanChoice() {
     let choice = prompt("Choose rock, paper, or scissors: ").toLowerCase();
     if (choice === "rock" || choice=== "paper" || choice === "scissors") {
@@ -24,5 +25,40 @@ function getHumanChoice() {
     }
 }
 
-let humanChoice = getHumanChoice();
-console.log("human choice: " + humanChoice);
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === "rock") {
+        if (computerChoice === "rock") {
+            console.log("Round tied! The computer chose rock.");
+        } else if (computerChoice === "paper") {
+            console.log("You lose! Paper beats rock.");
+            computerScore++;
+        } else {
+            console.log("You win! Rock beats scissors.")
+            humanScore++;
+        }
+    } else if (humanChoice === "paper") {
+        if (computerChoice === "rock") {
+            console.log("You Win! Paper beats rock.");
+            humanScore++;
+        } else if (computerChoice === "paper") {
+            console.log("Round tied! The computer chose paper.");
+        } else {
+            console.log("You lose! Scissors beat paper.");
+            computerScore++;
+        }
+    } else { // human chose scissors
+        if (computerChoice === "rock") {
+            console.log("You Lose! Rock beats scissors.");
+            computerScore++;
+        } else if (computerChoice === "paper") {
+            console.log("You win! Scissors beats paper.");
+            humanScore++;
+        } else {
+            console.log("Round tied! The computer chose scissors.");
+        }
+    }
+}
+
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+playRound(humanChoice, computerChoice);
