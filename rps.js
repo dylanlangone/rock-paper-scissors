@@ -21,7 +21,7 @@ function getHumanChoice() {
         return choice;
     } else {
         console.log("Please choose rock, paper, or scissors");
-        getHumanChoice();
+        return getHumanChoice();
     }
 }
 
