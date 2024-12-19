@@ -17,11 +17,11 @@ function getComputerChoice() {
 
 function getHumanChoice() {
     let choice = prompt("Choose rock, paper, or scissors: ").toLowerCase();
-    if (choice === "rock" || choice=== "paper" || choice === "scissors") {
+    if (choice === "rock" || choice === "paper" || choice === "scissors") {
         return choice;
     } else {
         console.log("Please choose rock, paper, or scissors");
-        return null;
+        getHumanChoice();
     }
 }
 
