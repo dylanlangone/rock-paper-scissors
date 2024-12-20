@@ -59,14 +59,18 @@ function playRound(humanChoice, computerChoice) {
     }
     score.textContent = "Player: " + humanScore +
     " | Computer: " + computerScore;
+
+    if (humanScore >= 5) {
+        alert("You win!");
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore >= 5) {
+        alert("Computer wins!");
+        humanScore = 0;
+        computerScore = 0;
+    }
 }
 
-function playGame() {
-
-
-      console.log("Final Score: Human: " + humanScore + 
-        "\nComputer Score: " + computerScore);
-}
 
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
@@ -78,5 +82,3 @@ const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
 const score = document.querySelector(".score");
-    
-playGame();
