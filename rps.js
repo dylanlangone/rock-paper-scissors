@@ -25,17 +25,6 @@ function getHumanChoice() {
     }
 }
 
-const rock = document.querySelector("#rock");
-rock.addEventListener("click", playRound("rock", getComputerChoice()));
- 
-const paper = document.querySelector("#paper");
-paper.addEventListener("click", playRound("paper", getComputerChoice()));
-
-const scissors = document.querySelector("#scissors");
-rock.addEventListener("click", playRound("scissors", getComputerChoice()));
-
-
-
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock") {
         if (computerChoice === "rock") {
@@ -71,12 +60,19 @@ function playRound(humanChoice, computerChoice) {
 }
 
 function playGame() {
-  while (humanScore < 5 && computerScore < 5) {
 
-  }
 
-    console.log("Final Score: Human: " + humanScore + 
+      console.log("Final Score: Human: " + humanScore + 
         "\nComputer Score: " + computerScore);
 }
+
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
+ 
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
 playGame();
