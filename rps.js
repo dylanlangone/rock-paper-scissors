@@ -28,35 +28,37 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock") {
         if (computerChoice === "rock") {
-            console.log("Round tied! The computer chose rock.");
+            alert("Round tied! The computer chose rock.");
         } else if (computerChoice === "paper") {
-            console.log("You lose! Paper beats rock.");
+            alert("You lose! Paper beats rock.");
             computerScore++;
         } else {
-            console.log("You win! Rock beats scissors.")
+            alert("You win! Rock beats scissors.")
             humanScore++;
         }
     } else if (humanChoice === "paper") {
         if (computerChoice === "rock") {
-            console.log("You Win! Paper beats rock.");
+            alert("You Win! Paper beats rock.");
             humanScore++;
         } else if (computerChoice === "paper") {
-            console.log("Round tied! The computer chose paper.");
+            alert("Round tied! The computer chose paper.");
         } else {
-            console.log("You lose! Scissors beat paper.");
+            alert("You lose! Scissors beat paper.");
             computerScore++;
         }
     } else { // human chose scissors
         if (computerChoice === "rock") {
-            console.log("You Lose! Rock beats scissors.");
+            alert("You Lose! Rock beats scissors.");
             computerScore++;
         } else if (computerChoice === "paper") {
-            console.log("You win! Scissors beats paper.");
+            alert("You win! Scissors beats paper.");
             humanScore++;
         } else {
-            console.log("Round tied! The computer chose scissors.");
+            alert("Round tied! The computer chose scissors.");
         }
     }
+    score.textContent = "Player: " + humanScore +
+    " | Computer: " + computerScore;
 }
 
 function playGame() {
@@ -75,4 +77,6 @@ paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
+const score = document.querySelector(".score");
+    
 playGame();
